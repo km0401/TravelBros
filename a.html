@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <script type="text/javascript" src="mydata.json"></script>
+        <script type="text/javascript" >
+            function load() {
+                var mydata = JSON.parse(data);
+
+                var div = document.getElementById('data');
+
+                for(var i = 0;i < mydata.length; i=i+2)
+                {
+                    div.innerHTML = div.innerHTML + "<h2 class='innertitle' id="+i+">"+ mydata[i+1].name +"</h2>"+"<p class='inner' id="+i+">"+ mydata[i].name +"</p>" + "<br>";
+                }
+            }
+        </script>
+
+    </head>
+    <body onload="load()">
+        <div id="data">
+
+        </div>
+    </body>
+</html>
